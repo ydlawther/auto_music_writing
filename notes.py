@@ -5,7 +5,7 @@ from music21 import converter, instrument, note, chord
 
 # 读取训练数据的Notes
 def get_notes():
-    filepath = 'train_datasets/'
+    filepath = 'data_sets/'
     files = os.listdir(filepath)
     nOtes = []
 
