@@ -7,7 +7,7 @@ def train():
     notes=get_notes()
     notes_len=len(set(notes))
     note_name=sorted(set(i for i in notes))  # 获得排序的不重复的音符名字
-    sequence_length = 11  # 序列长度     这里修改过 100个改为10个
+    sequence_length = 100  # 序列长度
     note_dict=dict((j,i) for i,j in enumerate(note_name))  # 设计一个字典，把音符转换成数字，方便训练
     network_input = []  # 创建输入序列
     network_output = []  # 创建输出序列
@@ -36,7 +36,7 @@ def train():
         mode='min'  # 如果监控对象是val_acc则取max，是loss则取min
     )
     callbacks_list = [checkpoint]
-    model.fit(network_input, network_output, epochs=1, batch_size=128, callbacks=callbacks_list)  # 整体迭代1次，每小批128个   这里修改过，100次改为5次
+    model.fit(network_input, network_output, epochs=100, batch_size=128, callbacks=callbacks_list)  # 整体迭代100次，每小批128个
     return network_input, normal_network_input, notes_len, note_name
 
 
