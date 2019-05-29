@@ -13,8 +13,8 @@ def generate_notes(model, network_input, note_name, notes_len):
     notedic = dict((i,j) for i, j in enumerate(note_name))    # 把刚才的整数还原成音调
     pattern = network_input[randindex]
     prediction = []
-    #随机生成100个音符
-    for note_index in range(100):      # 这里修改过 1000个音符修改为100个
+    #随机生成1000个音符
+    for note_index in range(1000):
         prediction_input = np.reshape(pattern, (1, len(pattern), 1))
         prediction_input = prediction_input / float(notes_len)#归一化
         prediction = model.predict(prediction_input, verbose=0)
