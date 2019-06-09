@@ -59,7 +59,7 @@ def create_music():
             new_note.offset = offset
             new_note.storedInstrument = instrument.Piano()
             output_notes = np.append(output_notes, new_note)
-        offset += 1
+        offset += 0.5
     # 创建音乐流（Stream）
     midi_stream = stream.Stream(output_notes)
     # 写入 MIDI 文件
