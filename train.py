@@ -38,8 +38,3 @@ def train():
     callbacks_list = [checkpoint]
     model.fit(network_input, network_output, epochs=100, batch_size=128, callbacks=callbacks_list)  # 整体迭代100次，每小批128个
     return network_input, normal_network_input, notes_len, note_name
-
-
-if __name__ == '__main__':
-    # train()#训练的时候执行
-    train()
